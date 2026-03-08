@@ -3,10 +3,10 @@ import cors from "cors";
 import {config} from "dotenv"
 import { connectDB, disconnectDB } from "./config/db.js"
 
-
 // Import Routes
 import { movieRoutes } from "./routes/movie.routes.js"
 import { authRoutes } from "./routes/auth.routes.js"
+import { watchlistRoutes } from "./routes/watchlist.routes.js"
 
 config()
 connectDB()
@@ -24,6 +24,7 @@ app.use(cors());
 // API Routes
 app.use("/movies", movieRoutes)
 app.use("/auth", authRoutes)
+app.use("/watchlist",watchlistRoutes )
 
 
 
